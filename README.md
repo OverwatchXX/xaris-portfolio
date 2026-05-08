@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ✨ Xaris Joy Tabayag — Portfolio
 https://xaris-portfolio.vercel.app/
 
