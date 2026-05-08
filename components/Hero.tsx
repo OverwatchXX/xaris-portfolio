@@ -18,20 +18,32 @@ export default function Hero() {
     <section
       id="hero"
       className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #060914 0%, #0B1028 60%, #0E155E 100%)" }}
+      style={{
+        background:
+          "linear-gradient(160deg, #060914 0%, #0B1028 60%, #0E155E 100%)",
+      }}
     >
       {/* ── Ambient glow blobs ── */}
       <div
         className="blob w-[600px] h-[600px] top-[-100px] left-[-200px]"
-        style={{ background: "radial-gradient(circle, rgba(179,122,212,0.25) 0%, transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(circle, rgba(179,122,212,0.25) 0%, transparent 70%)",
+        }}
       />
       <div
         className="blob w-[500px] h-[500px] bottom-[-80px] right-[-150px] animate-float-slow"
-        style={{ background: "radial-gradient(circle, rgba(121,151,230,0.2) 0%, transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(circle, rgba(121,151,230,0.2) 0%, transparent 70%)",
+        }}
       />
       <div
         className="blob w-[300px] h-[300px] top-[30%] left-[40%] animate-drift"
-        style={{ background: "radial-gradient(circle, rgba(32,106,188,0.15) 0%, transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(circle, rgba(32,106,188,0.15) 0%, transparent 70%)",
+        }}
       />
 
       {/* ── Jellyfish particles (SVG circles) ── */}
@@ -43,14 +55,14 @@ export default function Hero() {
             style={{
               width: `${4 + (i % 3) * 3}px`,
               height: `${4 + (i % 3) * 3}px`,
-              left: `${10 + (i * 7.5) % 85}%`,
-              top: `${15 + (i * 13) % 70}%`,
+              left: `${10 + ((i * 7.5) % 85)}%`,
+              top: `${15 + ((i * 13) % 70)}%`,
               background:
                 i % 3 === 0
                   ? "rgba(202,169,243,0.5)"
                   : i % 3 === 1
-                  ? "rgba(121,151,230,0.4)"
-                  : "rgba(179,122,212,0.4)",
+                    ? "rgba(121,151,230,0.4)"
+                    : "rgba(179,122,212,0.4)",
               boxShadow:
                 i % 3 === 0
                   ? "0 0 12px rgba(202,169,243,0.8)"
@@ -107,7 +119,11 @@ export default function Hero() {
             animate="show"
             className="flex flex-wrap gap-2"
           >
-            {["Computer Science Student", "UI/UX Designer", "Frontend Developer"].map((tag) => (
+            {[
+              "Computer Science Student",
+              "Requirements Analyst",
+              "Tech Community Leader",
+            ].map((tag) => (
               <span
                 key={tag}
                 className="glass-light rounded-full px-4 py-1.5 text-sm text-phlox/90 border border-phlox/15"
@@ -125,10 +141,11 @@ export default function Hero() {
             className="text-white/55 leading-relaxed max-w-md"
             style={{ fontSize: "1.05rem" }}
           >
-            Designing thoughtful digital experiences that blend creativity,
-            usability, and technology. 3rd Year CS student at{" "}
-            <span className="text-periwinkle">Bicol University</span>, passionate
-            about building tools that matter.
+            Turning ideas into structured, user-centered solutions through
+            research, documentation, and community-driven development. 3rd Year
+            CS student at{" "}
+            <span className="text-periwinkle">Bicol University</span>, building
+            things that matter — one requirement at a time.
           </motion.p>
 
           <motion.div
@@ -138,7 +155,10 @@ export default function Hero() {
             animate="show"
             className="flex flex-wrap gap-4 pt-2"
           >
-            <a href="#projects" className="btn-primary flex items-center gap-2 text-sm">
+            <a
+              href="#projects"
+              className="btn-primary flex items-center gap-2 text-sm"
+            >
               View Projects
               <ArrowDown size={15} />
             </a>
@@ -150,7 +170,10 @@ export default function Hero() {
               <Download size={15} />
               Download CV
             </a>
-            <a href="#contact" className="btn-outline flex items-center gap-2 text-sm">
+            <a
+              href="#contact"
+              className="btn-outline flex items-center gap-2 text-sm"
+            >
               <Mail size={15} />
               Contact Me
             </a>
@@ -210,16 +233,25 @@ export default function Hero() {
               className="absolute -bottom-4 -left-8 glass rounded-2xl px-4 py-2.5 z-20 border border-phlox/20"
             >
               <p className="text-xs text-white/50 font-medium">CS Student</p>
-              <p className="text-sm font-semibold text-phlox">Bicol University</p>
+              <p className="text-sm font-semibold text-phlox">
+                Bicol University
+              </p>
             </motion.div>
 
             <motion.div
               animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5,
+              }}
               className="absolute -top-4 -right-8 glass rounded-2xl px-4 py-2.5 z-20 border border-periwinkle/20"
             >
               <p className="text-xs text-white/50 font-medium">Currently</p>
-              <p className="text-sm font-semibold text-periwinkle">President, BU ACCeSS</p>
+              <p className="text-sm font-semibold text-periwinkle">
+                President, BU ACCeSS
+              </p>
             </motion.div>
           </div>
         </motion.div>
@@ -238,7 +270,8 @@ export default function Hero() {
           transition={{ duration: 1.5, repeat: Infinity }}
           className="w-px h-10"
           style={{
-            background: "linear-gradient(180deg, rgba(202,169,243,0.5) 0%, transparent 100%)",
+            background:
+              "linear-gradient(180deg, rgba(202,169,243,0.5) 0%, transparent 100%)",
           }}
         />
       </motion.div>

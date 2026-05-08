@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Github, ExternalLink, BookOpen, Brain, Layers, Database } from "lucide-react";
+import { Github, ExternalLink, BookOpen, Layers, Database } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -20,28 +20,23 @@ const projects = [
     description:
       "An educational literacy platform designed to help Philippine public school children improve English reading comprehension through interactive, accessible, and student-centered learning experiences.",
     role: "Requirements Analysis · Research · Testing · Product Design",
-    tags: ["Educational Tech", "UX Research", "Product Design", "Accessibility"],
+    tags: [
+      "Educational Tech",
+      "UX Research",
+      "Product Design",
+      "Accessibility",
+    ],
     github: "https://github.com/Aexreii/ELLA-App.git",
     live: null,
     icon: <BookOpen size={22} />,
     color: "#CAA9F3",
     gradient: "from-phlox/10 via-verbena/5 to-transparent",
-    highlights: ["Proposed & conceptualized the literacy app", "User requirements gathering", "Student-centered feature design", "Usability testing & feedback"],
-    featured: true,
-  },
-  {
-    title: "HazelNet",
-    subtitle: "Flashcard Learning App",
-    description:
-      "A flashcard-based learning platform leveraging the FSRS spaced repetition algorithm to optimize review scheduling and significantly improve long-term memory retention.",
-    role: "UI/UX Design · Frontend Concept",
-    tags: ["Spaced Repetition", "FSRS Algorithm", "Learning Design", "Productivity"],
-    github: null,
-    live: null,
-    icon: <Brain size={22} />,
-    color: "#7997E6",
-    gradient: "from-periwinkle/10 via-atlantis/5 to-transparent",
-    highlights: ["FSRS algorithm integration", "Smart review scheduling", "Productivity-focused UX", "Long-term memory optimization"],
+    highlights: [
+      "Proposed & conceptualized the literacy app",
+      "User requirements gathering",
+      "Student-centered feature design",
+      "Usability testing & feedback",
+    ],
     featured: true,
   },
   {
@@ -56,8 +51,13 @@ const projects = [
     icon: <Database size={22} />,
     color: "#B37AD4",
     gradient: "from-verbena/10 via-phlox/5 to-transparent",
-    highlights: ["Backend CRUD operations", "GUI-backend integration", "User manual authoring", "System debugging"],
-    featured: false,
+    highlights: [
+      "Backend CRUD operations",
+      "GUI-backend integration",
+      "User manual authoring",
+      "System debugging",
+    ],
+    featured: true,
   },
   {
     title: "E-PARADA",
@@ -71,12 +71,23 @@ const projects = [
     icon: <Layers size={22} />,
     color: "#206ABC",
     gradient: "from-atlantis/10 via-periwinkle/5 to-transparent",
-    highlights: ["C-based system design", "Core module development", "Performance debugging", "Pseudocode & documentation"],
+    highlights: [
+      "C-based system design",
+      "Core module development",
+      "Performance debugging",
+      "Pseudocode & documentation",
+    ],
     featured: false,
   },
 ];
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: (typeof projects)[0];
+  index: number;
+}) {
   return (
     <motion.div
       custom={index}
@@ -137,7 +148,10 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
         {/* Title */}
         <div className="mb-1">
-          <span className="section-label text-xs" style={{ color: project.color }}>
+          <span
+            className="section-label text-xs"
+            style={{ color: project.color }}
+          >
             {project.subtitle}
           </span>
         </div>
@@ -154,7 +168,10 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         {/* Highlights */}
         <ul className="space-y-1.5 mb-5">
           {project.highlights.map((h) => (
-            <li key={h} className="flex items-center gap-2 text-xs text-white/50">
+            <li
+              key={h}
+              className="flex items-center gap-2 text-xs text-white/50"
+            >
               <span
                 className="w-1.5 h-1.5 rounded-full shrink-0"
                 style={{ background: project.color }}
@@ -194,7 +211,10 @@ export default function Projects() {
       {/* Ambient */}
       <div
         className="blob w-[600px] h-[400px] top-1/4 left-[-250px]"
-        style={{ background: "radial-gradient(ellipse, rgba(202,169,243,0.08) 0%, transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(ellipse, rgba(202,169,243,0.08) 0%, transparent 70%)",
+        }}
       />
 
       <div ref={ref} className="max-w-7xl mx-auto px-6">
@@ -209,7 +229,10 @@ export default function Projects() {
           <span className="section-label">Projects</span>
           <div
             className="h-px flex-1 max-w-[60px]"
-            style={{ background: "linear-gradient(90deg, rgba(202,169,243,0.5), transparent)" }}
+            style={{
+              background:
+                "linear-gradient(90deg, rgba(202,169,243,0.5), transparent)",
+            }}
           />
         </motion.div>
 
@@ -232,7 +255,8 @@ export default function Projects() {
           animate={inView ? "show" : "hidden"}
           className="text-white/45 max-w-md mb-14 text-[1.05rem]"
         >
-          From educational apps to systems that keep things running — each project taught me something new.
+          From educational apps to systems that keep things running — each
+          project taught me something new.
         </motion.p>
 
         {/* Grid */}
