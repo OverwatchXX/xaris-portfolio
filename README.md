@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ✨ Xaris Joy Tabayag — Portfolio
 
 A premium, ocean-neon inspired personal portfolio built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**.
@@ -140,3 +141,7 @@ RESEND_API_KEY=your_key_here
 ---
 
 Made with 💜 for Xaris Joy Tabayag's portfolio
+=======
+# xaris-portfolio
+Personal portfolio repository showcasing my projects, skills, experiences, certifications, leadership roles, and creative works as a Computer Science student and developer. Built as a central hub for my journey in software development, UI/UX, research, and tech community involvement.
+>>>>>>> 0d12d8324844b6eaeb19edf07f5a55944948c817
