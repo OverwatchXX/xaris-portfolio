@@ -26,7 +26,7 @@ const projects = [
       "Product Design",
       "Accessibility",
     ],
-    github: "https://github.com/Aexreii/ELLA-App.git",
+    github: "https://github.com/OverwatchXX/ELLA-App.git",
     live: null,
     icon: <BookOpen size={22} />,
     color: "#CAA9F3",

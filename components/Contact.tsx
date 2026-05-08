@@ -2,7 +2,17 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Github, Linkedin, Facebook, Download, Send, MapPin, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  Mail,
+  Github,
+  Linkedin,
+  Facebook,
+  Download,
+  Send,
+  MapPin,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -23,15 +33,15 @@ const socials = [
   },
   {
     label: "GitHub",
-    value: "github.com/Aexreii",
-    href: "https://github.com/Aexreii",
+    value: "github.com/OverwatchXX",
+    href: "https://github.com/OverwatchXX",
     icon: <Github size={18} />,
     color: "#7997E6",
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com/in/xaris-tabayag",
-    href: "https://linkedin.com/in/xaris-tabayag",
+    value: "linkedin.com/in/xaris-joy-tabayag-039427338",
+    href: "https://www.linkedin.com/in/xaris-joy-tabayag-039427338/",
     icon: <Linkedin size={18} />,
     color: "#B37AD4",
   },
@@ -50,17 +60,23 @@ export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [status, setStatus] = useState<Status>("idle");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
   };
 
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) return;
-    // In production, wire this to Formspree, Resend, or your email provider
     await new Promise((r) => setTimeout(r, 800));
     setStatus("success");
     setForm({ name: "", email: "", subject: "", message: "" });
@@ -72,7 +88,10 @@ export default function Contact() {
       <section id="contact" className="relative py-32 overflow-hidden">
         <div
           className="blob w-[600px] h-[600px] bottom-[-100px] left-1/2 -translate-x-1/2"
-          style={{ background: "radial-gradient(circle, rgba(179,122,212,0.12) 0%, transparent 70%)" }}
+          style={{
+            background:
+              "radial-gradient(circle, rgba(179,122,212,0.12) 0%, transparent 70%)",
+          }}
         />
 
         <div ref={ref} className="max-w-7xl mx-auto px-6">
@@ -87,7 +106,10 @@ export default function Contact() {
             <span className="section-label">Contact</span>
             <div
               className="h-px flex-1 max-w-[60px]"
-              style={{ background: "linear-gradient(90deg, rgba(202,169,243,0.5), transparent)" }}
+              style={{
+                background:
+                  "linear-gradient(90deg, rgba(202,169,243,0.5), transparent)",
+              }}
             />
           </motion.div>
 
@@ -110,7 +132,8 @@ export default function Contact() {
             animate={inView ? "show" : "hidden"}
             className="text-white/45 max-w-md mb-14 text-[1.05rem]"
           >
-            Open to internships, project collaborations, and conversations about design & technology.
+            Open to internships, project collaborations, and conversations about
+            design & technology.
           </motion.p>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -122,12 +145,16 @@ export default function Contact() {
               animate={inView ? "show" : "hidden"}
               className="glass rounded-3xl p-8 border border-white/5 glow-border"
             >
-              <h3 className="font-serif text-2xl text-white/85 mb-6">Send a message</h3>
+              <h3 className="font-serif text-2xl text-white/85 mb-6">
+                Send a message
+              </h3>
 
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="text-xs text-white/40 mb-1.5 block">Name *</label>
+                    <label className="text-xs text-white/40 mb-1.5 block">
+                      Name *
+                    </label>
                     <input
                       name="name"
                       value={form.name}
@@ -137,7 +164,9 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="text-xs text-white/40 mb-1.5 block">Email *</label>
+                    <label className="text-xs text-white/40 mb-1.5 block">
+                      Email *
+                    </label>
                     <input
                       name="email"
                       value={form.email}
@@ -150,7 +179,9 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="text-xs text-white/40 mb-1.5 block">Subject</label>
+                  <label className="text-xs text-white/40 mb-1.5 block">
+                    Subject
+                  </label>
                   <input
                     name="subject"
                     value={form.subject}
@@ -161,7 +192,9 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="text-xs text-white/40 mb-1.5 block">Message *</label>
+                  <label className="text-xs text-white/40 mb-1.5 block">
+                    Message *
+                  </label>
                   <textarea
                     name="message"
                     value={form.message}
@@ -207,7 +240,9 @@ export default function Contact() {
               {/* Location */}
               <div className="flex items-center gap-3 text-white/50">
                 <MapPin size={16} className="text-phlox shrink-0" />
-                <span className="text-sm">Legazpi City, Albay, Philippines</span>
+                <span className="text-sm">
+                  Legazpi City, Albay, Philippines
+                </span>
               </div>
 
               {/* Socials */}
@@ -232,7 +267,9 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-xs text-white/35 mb-0.5">{s.label}</p>
-                      <p className="text-sm text-white/70 group-hover:text-white transition-colors">{s.value}</p>
+                      <p className="text-sm text-white/70 group-hover:text-white transition-colors">
+                        {s.value}
+                      </p>
                     </div>
                   </a>
                 ))}
@@ -250,7 +287,8 @@ export default function Contact() {
 
               {/* Availability note */}
               <p className="text-white/30 text-xs text-center italic">
-                Currently open to internship opportunities and project collaborations.
+                Currently open to internship opportunities and project
+                collaborations.
               </p>
             </motion.div>
           </div>
@@ -262,7 +300,8 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-serif text-xl gradient-text">XJT</p>
           <p className="text-white/25 text-sm text-center">
-            © {new Date().getFullYear()} Xaris Joy Delarosa Tabayag. Designed with love in Bicol.
+            © {new Date().getFullYear()} Xaris Joy Delarosa Tabayag. Designed
+            with love in Bicol.
           </p>
           <div className="flex items-center gap-4">
             {socials.map((s) => (
